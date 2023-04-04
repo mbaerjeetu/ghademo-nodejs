@@ -27,8 +27,7 @@ jobs:
              npm run clean
              npm run build --if-present
              npm run test --if-present && npm run junitxml
-       
-       
+        
   createchange:
     name: Create Change
     needs: build
@@ -47,7 +46,6 @@ jobs:
           interval: '100'
           timeout: '3600'
           child-workflow-id: '3600'
- 
  
   deploy:
     name: Deploy
