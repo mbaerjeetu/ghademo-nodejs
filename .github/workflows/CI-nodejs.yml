@@ -27,13 +27,14 @@ jobs:
              npm run clean
              npm run build --if-present
              npm run test --if-present && npm run junitxml
-        
+   
+   
   createchange:
     name: Create Change
     needs: build
     runs-on: ubuntu-latest
     steps:     
-      - name: ServiceNow Change
+      - name: ServiceNow DevOps Change
         uses: velivalab/servicenow-devops-change@master
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
@@ -46,7 +47,8 @@ jobs:
           interval: '100'
           timeout: '3600'
           child-workflow-id: '3600'
- 
+
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
