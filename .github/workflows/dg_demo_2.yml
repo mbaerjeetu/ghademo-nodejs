@@ -8,9 +8,11 @@ env:
 
 
 jobs:
-  change:
-    name: Change Request
+  deployment:
     runs-on: ubuntu-latest
-    environment:     
+    environment: 
       name: demo
-      url: https://github.com       
+      url: https://github.com
+    steps:
+      - name: deploy
+        run: echo Deployment Started
